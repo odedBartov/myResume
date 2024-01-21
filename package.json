@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@canvasjs/angular-charts": "^1.0.3",
+    "chart.js": "^4.4.1",
+    "ng2-charts": "^5.0.4"
+  }
+}
