@@ -125,11 +125,19 @@
     box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
 }
 
-.seperationLine {
-    width: 100%;
+
+.seperationLineContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1% 8% 1%;
     height: 2px;
-    background-color: rgb(174, 125, 125);
-    margin: 2% 1%;
+    margin: 30px 0;
+}
+
+.seperationLine {
+    background-color: rgb(109, 129, 160);
+    height: 2px;
+    width: 100%;
 }
 
 .skill {
@@ -166,7 +174,7 @@
     margin-left: 90px;
 }
 
-.pieImage{
+.pieImage {
     height: 110%;
 }
 

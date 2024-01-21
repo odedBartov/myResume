@@ -5,7 +5,11 @@
   <div class="welcome" [style.opacity]="'loading'? '1' : '0.5'">
     <div class="personalDetails">
       <div class="title titleFont">Oded bartov</div>
-      <div class="paragraph paragraphFont">Versatile Full Stack Web and Mobile Developer with a fervent passion for coding, characterized by a commitment to continuous self-improvement. Demonstrates proficiency in a diverse range of technologies, coupled with a strong foundation in optimizing the performance and maintenance of web systems. Proven ability to seamlessly transition between independent project management and collaborative teamwork, contributing to the success of multifaceted development initiatives</div>
+      <div class="paragraph paragraphFont">Versatile Full Stack Web and Mobile Developer with a fervent passion for
+        coding, characterized by a commitment to continuous self-improvement. Demonstrates proficiency in a diverse
+        range of technologies, coupled with a strong foundation in optimizing the performance and maintenance of web
+        systems. Proven ability to seamlessly transition between independent project management and collaborative
+        teamwork, contributing to the success of multifaceted development initiatives</div>
       <div class="contact">
         <div class="contactLine">
           <div class="contactHeader titleFont">Phone</div>
@@ -25,7 +29,8 @@
         </div>
         <div class="contactLine">
           <div class="contactHeader titleFont">Hobbies</div>
-          <div class="paragraphFont contactText">Piano (self taught), brewing beer, self developement, outdoor activities, working on private projects and much more :-)</div>
+          <div class="paragraphFont contactText">Piano (self taught), brewing beer, self developement, outdoor
+            activities, working on private projects and much more :-)</div>
         </div>
         <div class="contactLine">
           <div class="contactHeader titleFont">Social</div>
@@ -45,7 +50,9 @@
       <img class="profileImage" src="assets/oded_profile2.jpg" alt="this is me!">
     </div>
   </div>
-  <div class="seperationLine"></div>
+  <div class="seperationLineContainer">
+    <div class="seperationLine"></div>
+  </div>
   <div class="skills">
     <div class="techs">
       <div class="techsList">
@@ -72,7 +79,9 @@
       </div>
     </div> -->
   </div>
-  <div class="seperationLine"></div>
+  <div class="seperationLineContainer">
+    <div class="seperationLine"></div>
+  </div>
   <div class="carousel" [@slide]="animationState">
     <img class="slideButton" [style.visibility]="currentIndex>0 ? 'visible' : 'hidden'"
       (mouseenter)="mouseEnterBackButton($event)" (mouseleave)="mouseLeaveBackButton($event)"
