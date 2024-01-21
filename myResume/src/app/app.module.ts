@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+// import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
@@ -11,7 +11,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    CanvasJSAngularChartsModule,
+    // CanvasJSAngularChartsModule,
     BrowserAnimationsModule
   ],
   providers: [],
