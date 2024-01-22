@@ -201,4 +201,9 @@ export class AppComponent implements OnInit {
     const url = "https://github.com/odedBartov";
     window.open(url);
   }
+
+  navigateToCodewars() {
+    const url = "https://www.codewars.com/users/oded_Bartov";
+    window.open(url);
+  }
 }
