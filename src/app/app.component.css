@@ -3,11 +3,11 @@
 }
 
 .welcome {
-    height: 500px;
+    height: 450px;
     display: flex;
     justify-content: space-between;
-    padding: 1% 8% 0;
-    margin-bottom: 1%;
+    padding: 5px 8% 0;
+    /* margin-bottom: 1%; */
 }
 
 .loadingGif {
@@ -24,6 +24,7 @@
     display: flex;
     flex-direction: column;
     margin-right: 100px;
+    font-family: 'Roboto';
 }
 
 .profile {
@@ -39,7 +40,7 @@
 }
 
 .titleFont {
-    font-family: Cambria;
+    font-family: 'Montserrat';
 }
 
 .paragraphFont {
@@ -129,9 +130,9 @@
 .seperationLineContainer {
     display: flex;
     justify-content: center;
-    padding: 1% 8% 1%;
+    padding: 10px 8% 1%;
     height: 2px;
-    margin: 30px 0;
+    margin: 10px 0;
 }
 
 .seperationLine {
@@ -175,11 +176,50 @@
 }
 
 .pieImage {
-    height: 110%;
+    height: 100%;
 }
 
-.stars {
-    align-items: end;
+.experience {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+
+    .work-place {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        padding: 0 300px;
+
+        .text {
+            flex: 1;
+            padding: 30px;
+
+            .header {
+                font-family: 'Montserrat';
+                font-weight: 700;
+                font-size: 26px;
+            }
+
+            .resp {
+                font-family: 'Roboto';
+                font-size: 18px;
+            }
+        }
+
+        .bullets {
+            display: flex;
+            flex-direction: column;
+            padding: 30px;
+            flex: 1;
+
+            .tech {
+                font-family: 'Montserrat';
+                font-weight: 700;
+                font-size: 18px;
+            }
+        }
+    }
 }
 
 .star {
@@ -219,6 +259,7 @@
 }
 
 .jobTitleLine {
+    margin-top: -10px;
     font-size: 28px;
     font-weight: bold;
 }

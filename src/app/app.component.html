@@ -2,7 +2,7 @@
   <div class="loadingGif" *ngIf="loading">
     <img src="assets/loading.gif" class="">
   </div>
-  <div class="welcome" [style.opacity]="'loading'? '1' : '0.5'">
+  <div class="welcome" [style.opacity]="loading? 0.5 : 1">
     <div class="personalDetails">
       <div class="title titleFont">Oded bartov</div>
       <div class="paragraph paragraphFont">Versatile Full Stack Web and Mobile Developer with a fervent passion for
@@ -36,10 +36,11 @@
           <div class="contactHeader titleFont">Social</div>
           <img class="socialIcon" src="assets/linkedin_icon.png" alt="My linkedin profile"
             (click)="navigateToLinkedin()">
-            <img class="socialIcon" src="assets/github_icon.png" alt="My github profile" (click)="navigateToGithub()">
-            <img class="socialIcon" src="assets/codewars_icon.png" alt="My codewars profile" (click)="navigateToCodewars()">
-            <img class="socialIcon" src="assets/facebook_icon.png" alt="My facebook profile"
-              (click)="navigateToFacebook()">
+          <img class="socialIcon" src="assets/github_icon.png" alt="My github profile" (click)="navigateToGithub()">
+          <img class="socialIcon" src="assets/codewars_icon.png" alt="My codewars profile"
+            (click)="navigateToCodewars()">
+          <img class="socialIcon" src="assets/facebook_icon.png" alt="My facebook profile"
+            (click)="navigateToFacebook()">
         </div>
       </div>
       <div class="contactButtons">
@@ -51,6 +52,44 @@
       <img class="profileImage" src="assets/oded_profile2.jpg" alt="this is me!">
     </div>
   </div>
+  <div class="seperationLineContainer">
+    <div class="seperationLine"></div>
+  </div>
+  <div class="experience">
+    <div class="work-place" *ngFor="let workPlace of workPlaces">
+      <div class="text">
+        <span class="header">{{workPlace.company}}: </span>
+        <span class="header"> {{workPlace.dateFrom}} - {{workPlace.dateTo}}</span>
+        <div class="resp" *ngFor="let resp of workPlace.responsibilities">
+          {{resp}}
+        </div>
+      </div>
+      <div class="bullets">
+        <br/>
+        <div class="tech" *ngFor="let tech of workPlace.techs">
+          {{tech}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="carousel" [@slide]="animationState">
+    <img class="slideButton" [style.visibility]="currentIndex>0 ? 'visible' : 'hidden'"
+      (mouseenter)="mouseEnterBackButton($event)" (mouseleave)="mouseLeaveBackButton($event)"
+      src="assets/back_icon_not_active.png" (click)="prev()">
+    <div>
+      <div class="item jobTitleLine titleFont">{{ carouselItems[currentIndex].title }}</div>
+      <div class="item titleFont companyLine">{{ carouselItems[currentIndex].company }}</div>
+      <div class="item paragraphFont dates">{{ carouselItems[currentIndex].dateFrom }} -
+        {{carouselItems[currentIndex].dateTo}}</div>
+      <div class="item workPoints paragraphFont" *ngFor="let resp of carouselItems[currentIndex].responsibilities">
+        <div class="workPoint">&bull;</div>
+        {{resp}}
+      </div>
+    </div>
+    <img class="slideButton" [style.visibility]="currentIndex < carouselItems.length-1 ? 'visible' : 'hidden'"
+      (mouseenter)="mouseEnterNextButton($event)" (mouseleave)="mouseLeaveNextButton($event)"
+      src="assets/next_icon_not_active.png" (click)="next()">
+  </div> -->
   <div class="seperationLineContainer">
     <div class="seperationLine"></div>
   </div>
@@ -71,36 +110,6 @@
     </div>
     <div class="pie">
       <img class="pieImage" src="assets/pie.png">
-      <!-- <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'310px'}"></canvasjs-chart> -->
     </div>
-    <!-- <div class="pie-chart" style="height: 300px; width: 300px;">
-      <div *ngFor="let slice of slices; let i = index" class="slice" 
-      [style.transform]="getSliceTransform(i)" [style.background]="slice.color">
-        {{ slice.label }}
-      </div>
-    </div> -->
-  </div>
-  <div class="seperationLineContainer">
-    <div class="seperationLine"></div>
-  </div>
-  <div class="carousel" [@slide]="animationState">
-    <img class="slideButton" [style.visibility]="currentIndex>0 ? 'visible' : 'hidden'"
-      (mouseenter)="mouseEnterBackButton($event)" (mouseleave)="mouseLeaveBackButton($event)"
-      src="assets/back_icon_not_active.png" (click)="prev()">
-    <div>
-      <div class="item jobTitleLine titleFont">{{ carouselItems[currentIndex].title }}</div>
-      <div class="item titleFont companyLine">{{ carouselItems[currentIndex].company }}</div>
-      <div class="item paragraphFont dates">{{ carouselItems[currentIndex].dateFrom }} -
-        {{carouselItems[currentIndex].dateTo}}</div>
-      <div class="item workPoints paragraphFont" *ngFor="let resp of carouselItems[currentIndex].responsibilities">
-        <div class="workPoint">&bull;</div>
-        {{resp}}
-      </div>
-    </div>
-    <img class="slideButton" [style.visibility]="currentIndex < carouselItems.length-1 ? 'visible' : 'hidden'"
-      (mouseenter)="mouseEnterNextButton($event)" (mouseleave)="mouseLeaveNextButton($event)"
-      src="assets/next_icon_not_active.png" (click)="next()">
   </div>
 </div>
-
-<!-- interest/hobbies. languages -->

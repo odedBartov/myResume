@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { Skill, WorkPlace } from './models/workPlace';
 
 @Component({
   selector: 'app-root',
@@ -19,21 +20,21 @@ import { trigger, style, animate, transition } from '@angular/animations';
   ]
 })
 export class AppComponent implements OnInit {
-  data: any[] = [{value: 30, label: 'aaa', color: 'red'}
-  //, {value: 30, label: 'bbb', color: 'blue'}//, {value: 40, label: 'ccc', color: 'green'}
-];
+  data: any[] = [{ value: 30, label: 'aaa', color: 'red' }
+    //, {value: 30, label: 'bbb', color: 'blue'}//, {value: 40, label: 'ccc', color: 'green'}
+  ];
   total: number = 0;
   startAngles: number[] = [];
   slices: any[] = [];
-  
+
   currentIndex = 0;
   animationState: string | null = null;
   chartOptions = {}
   myEmail = "odedoded777@gmail.com";
   whatsappUrl = "https://api.whatsapp.com/send?phone=9720503664101";
-  resumeUrl = "assets/Oded bartov.pdf";
+  resumeUrl = "assets/Oded bartov resume 2025.pdf";
   loading = false;
-  carouselItems: any[] = [];
+  workPlaces: WorkPlace[] = [];
   skills = [{ name: "C#", level: 5 },
   { name: "Angular", level: 4 },
   { name: "Java", level: 3 },
@@ -60,7 +61,8 @@ export class AppComponent implements OnInit {
       currentAngle += percentage;
       this.slices.push({
         label: this.data[i].label,
-        color: this.data[i].color});
+        color: this.data[i].color
+      });
     }
   }
 
@@ -73,9 +75,8 @@ export class AppComponent implements OnInit {
   getConicGradient(index: number): string {
     const startAngle = this.startAngles[index];
     const endAngle = startAngle + (this.data[index].value / this.total) * 360;
-    return `conic-gradient(from ${startAngle}deg to ${endAngle}deg, ${
-      this.slices[index].color
-    } 0%, ${this.slices[index].color} 100%)`;
+    return `conic-gradient(from ${startAngle}deg to ${endAngle}deg, ${this.slices[index].color
+      } 0%, ${this.slices[index].color} 100%)`;
   }
 
   sendWhatsapp() {
@@ -86,7 +87,7 @@ export class AppComponent implements OnInit {
     this.loading = true;
     const link = document.createElement('a');
     link.href = this.resumeUrl;
-    link.download = 'Oded bartov.pdf';
+    link.download = 'Oded bartov resume 2025.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -121,24 +122,32 @@ export class AppComponent implements OnInit {
   }
 
   initCarousel() {
-    this.carouselItems = [{
-      company: "ONE", title: "Team leader", dateFrom: "03/2023", dateTo: "Present", responsibilities: [
-        "Directed the comprehensive design and specification of the entire system while overseeing programming team schedules. Took full responsibility for task management, ensuring timely and successful completion",
-        "Exercised strategic decision-making authority in shaping code architecture, design, and efficiency, with a focus on guiding the development team. Provided valuable assistance in navigating intricate tasks, leveraging a deep understanding of system intricacies and industry best practices to optimize overall project outcomes"]
+    this.workPlaces = [{
+      company: "InfraEdge", title: "Fullstack developer", dateFrom: "03/2024", dateTo: "present", techs: ["C#", "Angular", "Kafka", "Redis", "MongoDb", "Postgres"], responsibilities: [
+        "Standardized data exchange and validated payloads across small C# services communicating via Kafka, ensuring zero data duplication and 100% data fidelity through rigorous transaction management protocols",
+        "Solved a highly complex, intermittent data loss issue within the Microservice/BFF communication layer that was causing a 15% fault rate in core requests. This required in-depth, multi-system tracing and architecture correction to resolve the subtle race condition, immediately securing mission-critical data integrity",
+        "Architected and developed a high-performance Angular application integrating seamlessly with multiple Micro Frontends. Successfully navigated unusual client constraints, ensuring a unified user experience and smooth cross-application communication"
+      ]
     },
     {
-      company: "Capitolis", title: "Back-end developer", dateFrom: "08/2023", dateTo: "12/2023", responsibilities: [
+      company: "ONE", title: "Team leader", dateFrom: "03/2023", dateTo: "03/2024", techs: ["C#", "Angular", "SQL"], responsibilities: [
+        "Directed the end-to-end overhaul of a large, aging application, migrating and refactoring all layers (C# server, Angular UI, data persistence) into a highly efficient new system. Simultaneously managed architecture decisions and execution for a team of 4 developers",
+        "Lead the comprehensive design and specification of the entire system while overseeing programming team schedules. Took full responsibility for task management, ensuring timely and successful completion"
+      ]
+    },
+    {
+      company: "Capitolis", title: "Back-end developer", dateFrom: "08/2023", dateTo: "12/2023", techs: ["Java", "Postgres", "RabitMQ", "Docker", "Redis"], responsibilities: [
         "Solely managed the maintenance and development of an expansive system, serving as the backbone for some of the largest banks and hedge funds globally",
         "Played a key role in proactively addressing system features, promptly resolving bugs, and maintaining the overall integrity of the server infrastructure"]
     },
     {
-      company: "mPrest (iron dome)", title: "Full-stack developer", dateFrom: "07/2021", dateTo: "07/2022", responsibilities: [
+      company: "mPrest (iron dome)", title: "Full-stack developer", dateFrom: "07/2021", dateTo: "07/2022", techs: ["C#", "Angular", "WPF"], responsibilities: [
         "Shouldered the responsibility for the maintenance and expansion of a critical system dedicated to identifying and intercepting airborne threats. Executed key initiatives to ensure the ongoing reliability, scalability, and advanced capabilities of the system, contributing to enhanced security measures",
         "Directed the control of a large-scale desktop application by meticulously addressing end-to-end bugs and conducting comprehensive analysis of features. Implemented strategic solutions to ensure seamless functionality and enhance overall performance, contributing to the optimization of the desktop application at a large scale",
         "Engineered and implemented a sophisticated communication platform for cameras and sensors, enabling seamless detection of objects and threats in the sky. Instrumental in building a robust system to enhance communication and detection capabilities for improved security measures"]
     },
     {
-      company: "Sela group", title: "Full stack developer + lecturer", dateFrom: "08/2019", dateTo: "07/2021", responsibilities: [
+      company: "Sela group", title: "Full stack developer + lecturer", dateFrom: "08/2019", dateTo: "07/2021", techs: ["C#", "WPF", "JS", "SQL"], responsibilities: [
         "Implementing new features in the GUI, creating new functionality and maintain corresponding UI testing on the desktop application",
         "Expanded and enhanced the server infrastructure, integrating essential APIs to facilitate the seamless provision of required data and capture precise inputs. Played a key role in fortifying the server's capabilities, ensuring it effectively met the demands of the system by optimizing data access and input processes",
         "Teaching one-on-one and full-classes lessons, practicing frond and back end, servers, clouds, data bases and more",
@@ -160,7 +169,7 @@ export class AppComponent implements OnInit {
   next() {
     this.animationState = null;
     setTimeout(() => {
-      if (this.carouselItems.length - 1 > this.currentIndex) {
+      if (this.workPlaces.length - 1 > this.currentIndex) {
         this.currentIndex++;
         this.animationState = 'next';
       }
