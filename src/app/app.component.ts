@@ -36,17 +36,16 @@ export class AppComponent implements OnInit {
   loading = false;
   workPlaces: WorkPlace[] = [];
   skills = [{ name: "C#", level: 5 },
-  { name: "Angular", level: 4 },
+  { name: "Angular", level: 5 },
   { name: "Java", level: 3 },
   { name: "Node", level: 2 },
+  { name: "kafka", level: 3 },
   { name: "WPF", level: 3 },
   { name: "EF", level: 4 },
   { name: "SQL", level: 3 },
-  { name: "GCP", level: 4 },
-  { name: "AWS", level: 1 },
-  { name: "Azure", level: 1 },
-  { name: "GitHub", level: 4 },
-  { name: "TFS", level: 4 }
+  { name: "GCP", level: 3 },
+  { name: "AWS", level: 4 },
+  { name: "Azure", level: 2 }
   ]
 
   ngOnInit() {
