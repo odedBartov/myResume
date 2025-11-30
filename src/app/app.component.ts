@@ -44,8 +44,8 @@ export class AppComponent implements OnInit {
   { name: "EF", level: 4 },
   { name: "SQL", level: 3 },
   { name: "GCP", level: 3 },
-  { name: "AWS", level: 4 },
-  { name: "Azure", level: 2 }
+  { name: "AWS", level: 2 },
+  { name: "Azure", level: 1 }
   ]
 
   ngOnInit() {
