@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { WorkPlace } from 'src/app/models/workPlace';
 
 @Component({
@@ -8,7 +9,6 @@ import { WorkPlace } from 'src/app/models/workPlace';
 })
 export class ResumeComponent implements OnInit {
   data: any[] = [{ value: 30, label: 'aaa', color: 'red' }
-    //, {value: 30, label: 'bbb', color: 'blue'}//, {value: 40, label: 'ccc', color: 'green'}
   ];
   total: number = 0;
   startAngles: number[] = [];
@@ -31,7 +31,7 @@ export class ResumeComponent implements OnInit {
   { name: "AWS", level: 2 },
   { name: "Azure", level: 1 }
   ]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.createPieChart();
@@ -76,6 +76,10 @@ export class ResumeComponent implements OnInit {
     link.click();
     document.body.removeChild(link);
     this.loading = false;
+  }
+
+  navigateToPortfolio() {
+    this.router.navigate(['/portfolio']);
   }
 
   sendEmail() {

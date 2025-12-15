@@ -1,5 +1,6 @@
 <div class="main">
     <div class="header">oded bartov's portfolio</div>
+    <div class="go_back"><span (click)="goToResume()">Click here to go to resume</span></div>
     <div [@slide]="animationState" class="projects">
         <img class="slide_button" [style.visibility]="currentIndex>0 ? 'visible' : 'hidden'"
             (mouseenter)="mouseEnterBackButton($event)" (mouseleave)="mouseLeaveBackButton($event)"

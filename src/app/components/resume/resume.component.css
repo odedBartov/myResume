@@ -106,11 +106,12 @@
     font-weight: bold;
     cursor: pointer;
     transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
+    }
 }
 
-.WhatsappBtn:hover {
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
-}
 
 .resumeBtn {
     background-color: rgb(136, 101, 234);
@@ -120,10 +121,25 @@
     font-weight: bold;
     cursor: pointer;
     transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
+    }
 }
 
-.resumeBtn:hover {
-    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
+
+.portfolioButton {
+    background-color: rgb(208, 49, 49);
+    color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
+    }
 }
 
 
@@ -182,17 +198,16 @@
 .experience {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    padding-left: 200px;
 
 
     .work-place {
         width: 100%;
         justify-content: center;
         display: flex;
-        padding: 0 300px;
 
         .text {
-            flex: 1;
+            flex: 3;
             padding: 30px;
 
             .header {

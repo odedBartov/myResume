@@ -1,5 +1,6 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PortfolioItem } from 'src/app/models/portfolioItem';
 
 @Component({
@@ -24,7 +25,7 @@ export class PortfolioComponent implements OnInit {
   currentIndex = 0;
   animationState: string | null = null;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     const itemA = new PortfolioItem();
@@ -87,5 +88,9 @@ export class PortfolioComponent implements OnInit {
   mouseLeaveNextButton(img: Event) {
     const imgElement = img.target as HTMLImageElement;
     imgElement.src = "assets/next_icon_not_active.png";
+  }
+
+  goToResume() {
+    this.router.navigate(['/resume']);
   }
 }
