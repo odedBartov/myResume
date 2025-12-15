@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="header">oded bartov's portfolio</div>
+    <div [@slide]="animationState" class="projects">
+        <img class="slide_button" [style.visibility]="currentIndex>0 ? 'visible' : 'hidden'"
+            (mouseenter)="mouseEnterBackButton($event)" (mouseleave)="mouseLeaveBackButton($event)"
+            src="assets/back_icon_not_active.png" (click)="prev()">
+        <div class="project">
+            <span class="title">{{currentItem.title}}</span>
+            <img [src]="currentItem.imgSrc" class="project-picture" />
+            <div class="text">
+                <div class="description">{{workItems[currentIndex].description}}</div>
+                <div class="techs">
+                    <div style="font-weight: bold;">Techs and tools i used for this project:</div>
+                    <div class="tool" *ngFor="let tool of workItems[currentIndex].techStack">
+                        {{tool}}
+                    </div>
+                </div>
+            </div>
+            <div class="url">
+                <a [href]="currentItem.url" target="_blank" *ngIf="currentItem.isOnline">
+                    See for yourself
+                </a>
+                <span *ngIf="!currentItem.isOnline">{{currentItem.url}}</span>
+            </div>
+        </div>
+        <img class="slide_button" [style.visibility]="currentIndex < workItems.length-1 ? 'visible' : 'hidden'"
+            (mouseenter)="mouseEnterNextButton($event)" (mouseleave)="mouseLeaveNextButton($event)"
+            src="assets/next_icon_not_active.png" (click)="next()">
+    </div>
+</div>

@@ -1,0 +1,78 @@
+.main {
+    background-color: rgb(215, 237, 255);
+    width: auto;
+    height: 98vh;
+
+    .header {
+        font-family: 'Roboto';
+        font-weight: 800;
+        font-size: 50px;
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+        padding-bottom: 30px;
+        justify-content: center;
+    }
+
+    .projects {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        .slide_button {
+            cursor: pointer;
+            margin: 0 50px 200px;
+            width: 240px;
+        }
+
+        .project {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .title {
+                padding-bottom: 20px;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 30px;
+                font-weight: bold;
+                font-family: 'Roboto';
+            }
+
+            .project-picture {
+                height: 400px;
+            }
+
+            .text {
+                margin-top: 30px;
+                display: flex;
+                justify-content: space-between;
+                width: 800px;
+                gap: 80px;
+
+                .description {
+                    flex: 1.7;
+                    margin-top: 10px;
+                    font-size: 20px;
+                    font-family: 'Montserrat';
+                    margin-bottom: 20px;
+                }
+
+                .techs {
+                    flex: 1;
+                    font-size: 18px;
+                    font-family: 'Montserrat';
+                }
+            }
+
+            .url {
+                margin-top: 20px;
+                font-size: 30px;
+                font-family: 'Roboto';
+            }
+        }
+    }
+}
