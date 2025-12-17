@@ -17,10 +17,11 @@ export class ResumeComponent implements OnInit {
   myEmail = "odedoded777@gmail.com";
   whatsappUrl = "https://api.whatsapp.com/send?phone=9720503664101";
   resumeUrl = "assets/Oded bartov resume 2025.pdf";
+  coverLetterUrl = "assets/cover_letter.docx";
   loading = false;
   workPlaces: WorkPlace[] = [];
   skills = [{ name: "C#", level: 5 },
-  { name: "Angular", level: 5 },
+  { name: "Angular", level: 4 },
   { name: "Java", level: 3 },
   { name: "Node", level: 2 },
   { name: "kafka", level: 3 },
@@ -49,7 +50,7 @@ export class ResumeComponent implements OnInit {
       });
     }
   }
-  
+
   getSliceTransform(index: number): string {
     const startAngle = this.startAngles[index];
     console.log(startAngle)
@@ -72,6 +73,17 @@ export class ResumeComponent implements OnInit {
     const link = document.createElement('a');
     link.href = this.resumeUrl;
     link.download = 'Oded bartov resume 2025.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    this.loading = false;
+  }
+
+  downloadCoverLetter() {
+    this.loading = true;
+    const link = document.createElement('a');
+    link.href = this.coverLetterUrl;
+    link.download = 'cover_letter.docx';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -119,13 +131,13 @@ export class ResumeComponent implements OnInit {
     },
     {
       company: "ONE", title: "Team leader", dateFrom: "03/2023", dateTo: "03/2024", techs: ["C#", "Angular", "SQL"], responsibilities: [
-        "Directed the end-to-end overhaul of a large, aging application, migrating and refactoring all layers (C# server, Angular UI, data persistence) into a highly efficient new system. Simultaneously managed architecture decisions and execution for a team of 4 developers",
+        "Directed the end-to-end overhaul of a large, aging application, migrating and refactoring all layers (ASP.Net server, Angular UI, data persistence) into a highly efficient new system. Simultaneously managed architecture decisions and execution for a team of 4 developers",
         "Lead the comprehensive design and specification of the entire system while overseeing programming team schedules. Took full responsibility for task management, ensuring timely and successful completion"
       ]
     },
     {
       company: "Capitolis", title: "Back-end developer", dateFrom: "08/2023", dateTo: "12/2023", techs: ["Java", "Postgres", "RabitMQ", "Docker", "Redis"], responsibilities: [
-        "Solely managed the maintenance and development of an expansive system, serving as the backbone for some of the largest banks and hedge funds globally",
+        "Managed the maintenance and development of the back end in an expansive system, serving as the backbone for some of the largest banks and hedge funds globally",
         "Played a key role in proactively addressing system features, promptly resolving bugs, and maintaining the overall integrity of the server infrastructure"]
     },
     {
@@ -153,7 +165,6 @@ export class ResumeComponent implements OnInit {
     const url = "https://www.facebook.com/profile.php?id=100010459353916";
     window.open(url);
   }
-
 
   navigateToGithub() {
     const url = "https://github.com/odedBartov";

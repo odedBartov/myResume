@@ -127,7 +127,6 @@
     }
 }
 
-
 .portfolioButton {
     background-color: rgb(208, 49, 49);
     color: aliceblue;
@@ -142,6 +141,19 @@
     }
 }
 
+.coverLetterButton {
+    background-color: rgb(140, 155, 130);
+    color: aliceblue;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
+    }
+}
 
 .seperationLineContainer {
     display: flex;
