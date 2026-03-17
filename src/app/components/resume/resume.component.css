@@ -1,487 +1,559 @@
+/* ── Base ── */
 .main {
-    background-color: rgb(215, 237, 255);
+  background-color: #f1f5f9;
+  min-height: 100vh;
+  font-family: 'Roboto', Verdana, sans-serif;
+  color: #1e293b;
 }
 
-.welcome {
-    height: 450px;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 8% 0;
-    /* margin-bottom: 1%; */
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1a3458 60%, #1e3a5f 100%);
+  color: white;
+  padding: 64px 8% 72px;
 }
 
-.loadingGif {
-    width: 100%;
-    position: absolute;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.personalDetails {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    margin-right: 100px;
-    font-family: 'Roboto';
+.hero-text {
+  flex: 1;
+  min-width: 0;
 }
 
-.profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50%;
+.hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin: 0 0 12px;
 }
 
-.profileImage {
-    /* float: right; */
-    height: 75%;
+.hero-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 54px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  margin: 0 0 20px;
+  color: #f8fafc;
 }
 
-.titleFont {
-    font-family: 'Montserrat';
+.hero-bio {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #94a3b8;
+  max-width: 580px;
+  margin: 0 0 28px;
 }
 
-.paragraphFont {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* ── Contact Info ── */
+.hero-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 28px;
+  margin-bottom: 28px;
 }
 
-.title {
-    font-size: 50px;
-    font-weight: bold;
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  color: #cbd5e1;
 }
 
-.paragraph {
-    font-size: 15px;
-    margin-bottom: 2%;
-}
-
-.contactLine {
-    margin: 2% 0;
-    display: flex;
-}
-
-.contactText {
-    font-size: 15px;
-    width: 80%;
-}
-
-.contactHeader {
-    font-size: 15px;
-    font-weight: bold;
-    width: 20%;
-}
-
-.socialIcon {
-    height: 20px;
-    margin-right: 20px;
-}
-
-.socialIcon:hover {
-    cursor: pointer;
+.contact-icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  stroke: #60a5fa;
 }
 
 .link {
-    color: rgb(86, 52, 241);
-    font-size: large;
+  color: #93c5fd;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .link:hover {
-    cursor: pointer;
+  color: #bfdbfe;
 }
 
-.contactButtons {
-    display: flex;
-    justify-content: space-around;
-    padding: 0 5%;
-    height: 40px;
-    margin-top: auto;
+/* ── Social Icons ── */
+.social-links {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 32px;
 }
 
-.WhatsappBtn {
-    background-color: rgb(124, 228, 115);
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-
-    &:hover {
-        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
-    }
+.socialIcon {
+  height: 26px;
+  cursor: pointer;
+  opacity: 0.75;
+  filter: brightness(0) invert(1);
+  transition: opacity 0.2s, transform 0.2s;
 }
 
-
-.resumeBtn {
-    background-color: rgb(136, 101, 234);
-    color: aliceblue;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-
-    &:hover {
-        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
-    }
+.socialIcon:hover {
+  opacity: 1;
+  transform: translateY(-3px);
 }
 
-.portfolioButton {
-    background-color: rgb(208, 49, 49);
-    color: aliceblue;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-
-    &:hover {
-        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
-    }
+/* ── Action Buttons ── */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.coverLetterButton {
-    background-color: rgb(140, 155, 130);
-    color: aliceblue;
-    border-radius: 10px;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: box-shadow 0.2s ease;
-
-    &:hover {
-        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 1);
-    }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  letter-spacing: 0.3px;
 }
 
-.seperationLineContainer {
-    display: flex;
-    justify-content: center;
-    padding: 10px 8% 1%;
-    height: 2px;
-    margin: 10px 0;
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  filter: brightness(1.1);
 }
 
-.seperationLine {
-    background-color: rgb(109, 129, 160);
-    height: 2px;
-    width: 100%;
+.btn:active {
+  transform: translateY(0);
 }
 
-.skill {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: space-between;
-    height: 30px;
-    width: 45%;
-    font-size: 30px;
-    font-weight: bold;
+.btn-whatsapp { background: #25d366; color: white; }
+.btn-portfolio { background: #6366f1; color: white; }
+.btn-resume { background: #3b82f6; color: white; }
+.btn-cover { background: #475569; color: white; }
+
+/* ── Profile Photo ── */
+.hero-photo {
+  flex-shrink: 0;
 }
 
-.skills {
-    height: 300px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 8%;
-    margin-top: -1%;
+.profileImage {
+  width: 270px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
 }
 
-.techs {
-    width: 50%;
+/* ── Section Shell ── */
+.section {
+  padding: 64px 8%;
 }
 
-.techsList {
-    display: flex;
-    flex-wrap: wrap;
+.section-alt {
+  background: #ffffff;
 }
 
-.pie {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    margin-left: 90px;
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 40px;
+  padding-bottom: 14px;
+  border-bottom: 3px solid #3b82f6;
+  display: inline-block;
+}
+
+/* ── Timeline ── */
+.timeline {
+  position: relative;
+  padding-left: 36px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: linear-gradient(to bottom, #3b82f6 0%, #c7d2fe 100%);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -31px;
+  top: 22px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 3px solid #f1f5f9;
+  box-shadow: 0 0 0 3px #3b82f6;
+  z-index: 1;
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 14px;
+  padding: 26px 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 1px solid #e2e8f0;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.section .timeline-dot {
+  border-color: #f1f5f9;
+}
+
+.timeline-card:hover {
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.11);
+  transform: translateX(6px);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.company-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.job-title {
+  font-size: 14px;
+  color: #3b82f6;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.date-badge {
+  font-size: 12px;
+  color: #64748b;
+  background: #f1f5f9;
+  padding: 5px 13px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-style: italic;
+  font-family: 'Roboto', sans-serif;
+  flex-shrink: 0;
+}
+
+.responsibilities {
+  padding-left: 18px;
+  margin: 0 0 18px;
+}
+
+.responsibilities li {
+  font-size: 14px;
+  line-height: 1.72;
+  color: #475569;
+  margin-bottom: 7px;
+}
+
+.responsibilities li:last-child {
+  margin-bottom: 0;
+}
+
+.tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-chip {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+  letter-spacing: 0.2px;
+}
+
+/* ── Skills ── */
+.skills-layout {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+}
+
+.skills-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px 48px;
+}
+
+.skill-item {
+  min-width: 0;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 7px;
+}
+
+.skill-name {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.skill-level-label {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-family: 'Roboto', sans-serif;
+}
+
+.skill-bar {
+  height: 7px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+  border-radius: 4px;
+}
+
+/* ── Pie Chart ── */
+.pie-section {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pie-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  text-align: center;
 }
 
 .pieImage {
-    height: 100%;
+  width: 280px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
-.experience {
-    display: flex;
-    flex-direction: column;
-    padding-left: 200px;
-
-
-    .work-place {
-        width: 100%;
-        justify-content: center;
-        display: flex;
-
-        .text {
-            flex: 3;
-            padding: 30px;
-
-            .header {
-                font-family: 'Montserrat';
-                font-weight: 700;
-                font-size: 26px;
-            }
-
-            .resp {
-                font-family: 'Roboto';
-                font-size: 18px;
-            }
-        }
-
-        .bullets {
-            display: flex;
-            flex-direction: column;
-            padding: 30px;
-            flex: 1;
-
-            .tech {
-                font-family: 'Montserrat';
-                font-weight: 700;
-                font-size: 18px;
-            }
-        }
-    }
+/* ── Footer Strip ── */
+.footer-strip {
+  background: #0f172a;
+  padding: 24px 8%;
 }
 
-.star {
-    background-color: rgb(47, 41, 41);
-    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-    display: inline-block;
-    height: 30px;
-    width: 30px;
+.hobbies-row {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
 }
 
-#active {
-    background-color: rgb(203, 203, 38);
+.hobbies-label {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-right: 6px;
 }
 
-.item {
-    flex: 1;
-    text-align: left;
-    padding: 5px;
-}
-
-.jobTitleLine {
-    margin-top: -10px;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.companyLine {
-    font-size: 20px;
-}
-
-.workPoints {
-    display: flex;
-}
-
-.workPoint {
-    margin-right: 5%;
-}
-
-.dates {
-    font-size: 14px;
-    font-style: italic;
-    color: rgb(27, 125, 210);
-}
-
-.pie-chart {
-    position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.slice {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(50% 50%, 100% 100%, 0 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: white;
+.hobby-tag {
+  font-size: 13px;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.07);
+  padding: 4px 13px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ── Tablet (≤1024px) ── */
 @media (max-width: 1024px) {
-    .welcome {
-        height: auto;
-        padding: 20px 5% 10px;
-    }
+  .hero {
+    padding: 48px 5% 56px;
+  }
 
-    .personalDetails {
-        margin-right: 40px;
-    }
+  .hero-content {
+    gap: 40px;
+  }
 
-    .title {
-        font-size: 38px;
-    }
+  .hero-name {
+    font-size: 42px;
+  }
 
-    .experience {
-        padding-left: 60px;
-    }
+  .profileImage {
+    width: 210px;
+    height: 210px;
+  }
 
-    .skills {
-        height: auto;
-        padding-bottom: 20px;
-    }
+  .skills-layout {
+    gap: 40px;
+  }
 
-    .skill {
-        font-size: 22px;
-        height: 25px;
-        width: 48%;
-    }
-
-    .star {
-        height: 22px;
-        width: 22px;
-    }
+  .section {
+    padding: 48px 5%;
+  }
 }
 
 /* ── Mobile (≤768px) ── */
 @media (max-width: 768px) {
-    .welcome {
-        flex-direction: column-reverse;
-        height: auto;
-        padding: 15px 5% 10px;
-        align-items: center;
-    }
+  .hero {
+    padding: 36px 5% 44px;
+  }
 
-    .personalDetails {
-        width: 100%;
-        margin-right: 0;
-    }
+  .hero-content {
+    flex-direction: column-reverse;
+    gap: 28px;
+    align-items: center;
+    text-align: center;
+  }
 
-    .profile {
-        width: 100%;
-        justify-content: center;
-        margin-bottom: 12px;
-    }
+  .hero-name {
+    font-size: 34px;
+    letter-spacing: -0.5px;
+  }
 
-    .profileImage {
-        height: 180px;
-    }
+  .hero-bio {
+    max-width: 100%;
+  }
 
-    .title {
-        font-size: 30px;
-        text-align: center;
-    }
+  .hero-contact {
+    justify-content: center;
+  }
 
-    .paragraph {
-        font-size: 14px;
-    }
+  .social-links {
+    justify-content: center;
+  }
 
-    .contactButtons {
-        flex-wrap: wrap;
-        gap: 8px;
-        height: auto;
-        padding: 0;
-        margin-bottom: 10px;
-    }
+  .action-buttons {
+    justify-content: center;
+  }
 
-    .contactButtons button {
-        flex: 1 1 calc(50% - 4px);
-        padding: 8px 4px;
-        font-size: 13px;
-    }
+  .profileImage {
+    width: 180px;
+    height: 180px;
+  }
 
-    .experience {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+  .section {
+    padding: 40px 5%;
+  }
 
-    .jobTitleLine {
-        font-size: 20px;
-    }
+  .skills-layout {
+    flex-direction: column;
+  }
 
-    .companyLine {
-        font-size: 16px;
-    }
+  .skills-grid {
+    width: 100%;
+  }
 
-    .skills {
-        flex-direction: column;
-        height: auto;
-        padding-bottom: 20px;
-    }
+  .pie-section {
+    width: 100%;
+  }
 
-    .techs {
-        width: 100%;
-    }
+  .pieImage {
+    width: 100%;
+    max-width: 340px;
+  }
 
-    .pie {
-        width: 100%;
-        margin-left: 0;
-        justify-content: center;
-        padding: 16px 0;
-    }
+  .timeline-header {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .pieImage {
-        height: auto;
-        max-width: 88%;
-    }
+  .timeline {
+    padding-left: 28px;
+  }
 
-    .skill {
-        font-size: 18px;
-        height: 22px;
-        width: 48%;
-    }
-
-    .star {
-        height: 20px;
-        width: 20px;
-    }
+  .timeline-dot {
+    left: -24px;
+  }
 }
 
 /* ── Small mobile (≤480px) ── */
 @media (max-width: 480px) {
-    .title {
-        font-size: 24px;
-    }
+  .hero-name {
+    font-size: 28px;
+  }
 
-    .experience {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
+  .hero-eyebrow {
+    font-size: 11px;
+  }
 
-    .experience .work-place {
-        flex-direction: column;
-    }
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .experience .work-place .text {
-        padding: 10px 8px;
-    }
+  .btn {
+    font-size: 12.5px;
+    padding: 9px 15px;
+  }
 
-    .experience .work-place .text .header {
-        font-size: 18px;
-    }
+  .section-title {
+    font-size: 22px;
+  }
 
-    .experience .work-place .text .resp {
-        font-size: 14px;
-    }
+  .timeline-card {
+    padding: 18px 18px;
+  }
 
-    .experience .work-place .bullets {
-        padding: 4px 8px 10px 16px;
-    }
+  .company-name {
+    font-size: 18px;
+  }
 
-    .skill {
-        font-size: 15px;
-        width: 100%;
-        height: 20px;
-    }
-
-    .star {
-        height: 16px;
-        width: 16px;
-    }
-
-    .contactButtons button {
-        flex: 1 1 100%;
-    }
+  .footer-strip {
+    padding: 20px 5%;
+  }
 }

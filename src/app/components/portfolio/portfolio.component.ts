@@ -33,7 +33,7 @@ export class PortfolioComponent implements OnInit {
     itemA.title = "Focus - Web app";
     itemA.url = "https://www.focus-app.co.il";
     itemA.description = "A system designed to help freelancers with every day work. The system monitors clients, payments, tasks, calendars, working time and much more. I also have implemented an AI agent that can answer user's personal questions like 'how many open projects do i have?' or 'which customer has the closest dead line'. The system is live online with actual paying users";
-    itemA.techStack = ["C#", "Angular", "MongoDb", "Vertex.AI", "Webhooks", "Socket"];
+    itemA.techStack = ["C#", "Angular", "MongoDb", "Vertex.AI", "OAuth 2.0", "Webhooks", "Socket"];
     itemA.isOnline = true;
 
     const itemB = new PortfolioItem();
@@ -70,24 +70,14 @@ export class PortfolioComponent implements OnInit {
     }, 0);
   }
 
-  mouseEnterBackButton(img: Event) {
-    const imgElement = img.target as HTMLImageElement;
-    imgElement.src = "assets/back_icon_active.png";
-  }
-
-  mouseLeaveBackButton(img: Event) {
-    const imgElement = img.target as HTMLImageElement;
-    imgElement.src = "assets/back_icon_not_active.png";
-  }
-
-  mouseEnterNextButton(img: Event) {
-    const imgElement = img.target as HTMLImageElement;
-    imgElement.src = "assets/next_icon_active.png";
-  }
-
-  mouseLeaveNextButton(img: Event) {
-    const imgElement = img.target as HTMLImageElement;
-    imgElement.src = "assets/next_icon_not_active.png";
+  goToIndex(index: number) {
+    if (index === this.currentIndex) return;
+    const direction = index > this.currentIndex ? 'next' : 'prev';
+    this.animationState = null;
+    setTimeout(() => {
+      this.currentIndex = index;
+      this.animationState = direction;
+    }, 0);
   }
 
   goToResume() {

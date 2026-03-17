@@ -1,31 +1,106 @@
 <div class="main">
-    <div class="header">oded bartov's portfolio</div>
-    <div class="go_back"><span (click)="goToResume()">Click here to go to resume</span></div>
-    <div [@slide]="animationState" class="projects">
-        <img class="slide_button" [style.visibility]="currentIndex>0 ? 'visible' : 'hidden'"
-            (mouseenter)="mouseEnterBackButton($event)" (mouseleave)="mouseLeaveBackButton($event)"
-            src="assets/back_icon_not_active.png" (click)="prev()">
-        <div class="project">
-            <span class="title">{{currentItem.title}}</span>
-            <img [src]="currentItem.imgSrc" class="project-picture" />
-            <div class="text">
-                <div class="description">{{workItems[currentIndex].description}}</div>
-                <div class="techs">
-                    <div style="font-weight: bold;">Techs and tools i used for this project:</div>
-                    <div class="tool" *ngFor="let tool of workItems[currentIndex].techStack">
-                        {{tool}}
-                    </div>
-                </div>
-            </div>
-            <div class="url">
-                <a [href]="currentItem.url" target="_blank" *ngIf="currentItem.isOnline">
-                    See for yourself
-                </a>
-                <span *ngIf="!currentItem.isOnline">{{currentItem.url}}</span>
-            </div>
-        </div>
-        <img class="slide_button" [style.visibility]="currentIndex < workItems.length-1 ? 'visible' : 'hidden'"
-            (mouseenter)="mouseEnterNextButton($event)" (mouseleave)="mouseLeaveNextButton($event)"
-            src="assets/next_icon_not_active.png" (click)="next()">
+
+  <!-- ── Header ── -->
+  <div class="portfolio-header">
+    <button class="back-btn" (click)="goToResume()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Back to Resume
+    </button>
+    <div class="header-center">
+      <p class="header-eyebrow">Oded Bartov</p>
+      <h1 class="header-title">Portfolio</h1>
     </div>
+    <div class="header-spacer"></div>
+  </div>
+
+  <!-- ── Project Viewer ── -->
+  <div class="portfolio-body">
+    <div [@slide]="animationState" class="project-wrapper">
+
+      <div class="project-card">
+
+        <!-- Side Navigation -->
+        <button class="nav-btn nav-prev" [class.invisible]="currentIndex === 0" (click)="prev()" title="Previous">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+
+        <!-- Project Content -->
+        <div class="project-content">
+
+          <div class="project-top">
+            <div class="project-meta">
+              <span class="project-counter">{{currentIndex + 1}} / {{workItems.length}}</span>
+              <span class="status-badge" [class.online]="currentItem.isOnline">
+                <span class="status-dot"></span>
+                {{currentItem.isOnline ? 'Live' : 'Offline'}}
+              </span>
+            </div>
+            <h2 class="project-title">{{currentItem.title}}</h2>
+          </div>
+
+          <div class="project-main">
+            <div class="project-image-wrap">
+              <img [src]="currentItem.imgSrc" class="project-picture" [alt]="currentItem.title" />
+            </div>
+
+            <div class="project-details">
+
+              <div class="detail-block">
+                <h3 class="detail-heading">About this project</h3>
+                <p class="project-description">{{workItems[currentIndex].description}}</p>
+
+                <a *ngIf="currentItem.isOnline" [href]="currentItem.url" target="_blank" class="live-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                    <polyline points="15 3 21 3 21 9"/>
+                    <line x1="10" y1="14" x2="21" y2="3"/>
+                  </svg>
+                  View Live Project
+                </a>
+
+                <div *ngIf="!currentItem.isOnline" class="offline-note">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="8" x2="12" y2="12"/>
+                    <line x1="12" y1="16" x2="12.01" y2="16"/>
+                  </svg>
+                  {{currentItem.url}}
+                </div>
+              </div>
+
+              <div class="detail-block">
+                <h3 class="detail-heading">Tech Stack</h3>
+                <div class="tech-chips">
+                  <span class="tech-chip" *ngFor="let tool of workItems[currentIndex].techStack">{{tool}}</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Side Navigation -->
+        <button class="nav-btn nav-next" [class.invisible]="currentIndex >= workItems.length - 1" (click)="next()" title="Next">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Dot Indicators -->
+    <div class="dot-indicators">
+      <button class="dot" *ngFor="let item of workItems; index as i"
+        [class.active]="i === currentIndex"
+        (click)="goToIndex(i)"
+        [attr.aria-label]="'Go to project ' + (i + 1)">
+      </button>
+    </div>
+  </div>
+
 </div>

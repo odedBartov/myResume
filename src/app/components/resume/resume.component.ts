@@ -16,7 +16,7 @@ export class ResumeComponent implements OnInit {
   chartOptions = {}
   myEmail = "odedoded777@gmail.com";
   whatsappUrl = "https://api.whatsapp.com/send?phone=9720503664101";
-  resumeUrl = "assets/Oded bartov resume 2025.pdf";
+  resumeUrl = "assets/Resume Oded-Bartov 2026.pdf";
   coverLetterUrl = "assets/cover_letter.docx";
   loading = false;
   workPlaces: WorkPlace[] = [];
@@ -72,7 +72,7 @@ export class ResumeComponent implements OnInit {
     this.loading = true;
     const link = document.createElement('a');
     link.href = this.resumeUrl;
-    link.download = 'Oded bartov resume 2025.pdf';
+    link.download = 'Resume Oded Bartov - 2026.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -123,7 +123,7 @@ export class ResumeComponent implements OnInit {
 
   initCarousel() {
     this.workPlaces = [{
-      company: "InfraEdge", title: "Fullstack developer", dateFrom: "03/2024", dateTo: "present", techs: ["C#", "Angular", "Kafka", "Redis", "MongoDb", "Postgres"], responsibilities: [
+      company: "InfraEdge", title: "Fullstack developer", dateFrom: "03/2024", dateTo: "present", techs: ["C#", "Angular", "PrimeNg", "Kafka", "Redis", "MongoDb", "Postgres"], responsibilities: [
         "Standardized data exchange and validated payloads across small C# services communicating via Kafka, ensuring zero data duplication and 100% data fidelity through rigorous transaction management protocols",
         "Solved a highly complex, intermittent data loss issue within the Microservice/BFF communication layer that was causing a 15% fault rate in core requests. This required in-depth, multi-system tracing and architecture correction to resolve the subtle race condition, immediately securing mission-critical data integrity",
         "Architected and developed a high-performance Angular application integrating seamlessly with multiple Micro Frontends. Successfully navigated unusual client constraints, ensuring a unified user experience and smooth cross-application communication"

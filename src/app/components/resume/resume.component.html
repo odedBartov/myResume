@@ -1,102 +1,132 @@
 <div class="main">
-    <div class="welcome" [style.opacity]="loading? 0.5 : 1">
-        <div class="personalDetails">
-            <div class="title titleFont">Oded bartov</div>
-            <div class="paragraph paragraphFont">Versatile Full Stack Web and Mobile Developer with a fervent passion
-                for
-                coding, characterized by a commitment to continuous self-improvement. Demonstrates proficiency in a
-                diverse
-                range of technologies, coupled with a strong foundation in optimizing the performance and maintenance of
-                web
-                systems. Proven ability to seamlessly transition between independent project management and
-                collaborative
-                teamwork, contributing to the success of multifaceted development initiatives</div>
-            <div class="contact">
-                <div class="contactLine">
-                    <div class="contactHeader titleFont">Phone</div>
-                    <div class="paragraphFont contactText">050-3664101</div>
-                </div>
-                <div class="contactLine">
-                    <div class="contactHeader titleFont">Email</div>
-                    <div class="paragraphFont contactText link" (click)="sendEmail()">{{myEmail}}</div>
-                </div>
-                <div class="contactLine">
-                    <div class="contactHeader titleFont">Address</div>
-                    <div class="paragraphFont contactText">Valero 20, Jerusalem, Israel</div>
-                </div>
-                <div class="contactLine">
-                    <div class="contactHeader titleFont">Languages</div>
-                    <div class="paragraphFont contactText">Hebrew (fluent), English (fluent)</div>
-                </div>
-                <div class="contactLine">
-                    <div class="contactHeader titleFont">Hobbies</div>
-                    <div class="paragraphFont contactText">Piano (self taught), brewing beer, fencing, self developement, outdoor
-                        activities, working on private projects and much more :-)</div>
-                </div>
-                <div class="contactLine">
-                    <div class="contactHeader titleFont">Social</div>
-                    <img class="socialIcon" src="assets/linkedin_icon.png" alt="My linkedin profile"
-                        (click)="navigateToLinkedin()">
-                    <img class="socialIcon" src="assets/github_icon.png" alt="My github profile"
-                        (click)="navigateToGithub()">
-                    <img class="socialIcon" src="assets/codewars_icon.png" alt="My codewars profile"
-                        (click)="navigateToCodewars()">
-                    <img class="socialIcon" src="assets/facebook_icon.png" alt="My facebook profile"
-                        (click)="navigateToFacebook()">
-                </div>
-            </div>
-            <div class="contactButtons">
-                <button class="WhatsappBtn" (click)="sendWhatsapp()">Whatsapp</button>
-                <button class="portfolioButton" (click)="navigateToPortfolio()">Portfolio</button>
-                <button class="resumeBtn" (click)="downloadResume()">Download resume</button>
-                <button class="coverLetterButton" (click)="downloadCoverLetter()">Former TL cover letter</button>
-            </div>
+
+  <!-- ── Hero Section ── -->
+  <div class="hero" [style.opacity]="loading ? 0.5 : 1">
+    <div class="hero-content">
+
+      <div class="hero-text">
+        <p class="hero-eyebrow">Full Stack Developer</p>
+        <h1 class="hero-name">Oded Bartov</h1>
+        <p class="hero-bio">
+          Versatile Full Stack Web and Mobile Developer with a passion for coding and continuous self-improvement.
+          Proficient in a diverse range of technologies with a strong foundation in optimizing performance and maintenance
+          of web systems. Proven ability to seamlessly transition between independent project management and collaborative teamwork.
+        </p>
+
+        <div class="hero-contact">
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.64a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span>050-3664101</span>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span class="link" (click)="sendEmail()">{{myEmail}}</span>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Jerusalem, Israel</span>
+          </div>
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg>
+            <span>Hebrew &amp; English (fluent)</span>
+          </div>
         </div>
-        <div class="profile">
-            <img class="profileImage" src="assets/oded_profile2.jpg" alt="this is me!">
+
+        <div class="social-links">
+          <img class="socialIcon" src="assets/linkedin_icon.png" alt="LinkedIn" (click)="navigateToLinkedin()" title="LinkedIn">
+          <img class="socialIcon" src="assets/github_icon.png" alt="GitHub" (click)="navigateToGithub()" title="GitHub">
+          <img class="socialIcon" src="assets/codewars_icon.png" alt="Codewars" (click)="navigateToCodewars()" title="Codewars">
+          <img class="socialIcon" src="assets/facebook_icon.png" alt="Facebook" (click)="navigateToFacebook()" title="Facebook">
         </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-whatsapp" (click)="sendWhatsapp()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </button>
+          <button class="btn btn-portfolio" (click)="navigateToPortfolio()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            Portfolio
+          </button>
+          <button class="btn btn-resume" (click)="downloadResume()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </button>
+          <button class="btn btn-cover" (click)="downloadCoverLetter()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            Cover Letter
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-photo">
+        <img class="profileImage" src="assets/oded_profile2.jpg" alt="Oded Bartov">
+      </div>
+
     </div>
-    <div class="seperationLineContainer">
-        <div class="seperationLine"></div>
-    </div>
-    <div class="experience">
-        <div class="work-place" *ngFor="let workPlace of workPlaces">
-            <div class="text">
-                <span class="header">{{workPlace.company}}: </span>
-                <span class="header"> {{workPlace.dateFrom}} - {{workPlace.dateTo}}</span>
-                <div class="resp" *ngFor="let resp of workPlace.responsibilities">
-                    {{resp}}
-                </div>
+  </div>
+
+  <!-- ── Experience Section ── -->
+  <div class="section">
+    <div class="section-inner">
+      <h2 class="section-title">Work Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item" *ngFor="let workPlace of workPlaces">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div class="timeline-heading">
+                <div class="company-name">{{workPlace.company}}</div>
+                <div class="job-title">{{workPlace.title}}</div>
+              </div>
+              <div class="date-badge">{{workPlace.dateFrom}} — {{workPlace.dateTo}}</div>
             </div>
-            <div class="bullets">
-                <br />
-                <div class="tech" *ngFor="let tech of workPlace.techs">
-                    {{tech}}
-                </div>
+            <ul class="responsibilities">
+              <li *ngFor="let resp of workPlace.responsibilities">{{resp}}</li>
+            </ul>
+            <div class="tech-chips">
+              <span class="tech-chip" *ngFor="let tech of workPlace.techs">{{tech}}</span>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <div class="seperationLineContainer">
-        <div class="seperationLine"></div>
-    </div>
-    <div class="skills">
-        <div class="techs">
-            <div class="techsList">
-                <div *ngFor="let item of skills; index as i" class="skill"
-                    [ngStyle]="{'margin-right': i%2==0? '10%' : ''}">
-                    <div class="titleFont">{{item.name}}</div>
-                    <div class="stars">
-                        <div class="star" [id]="item.level > 0? 'active' : ''"></div>
-                        <div class="star" [id]="item.level > 1? 'active' : ''"></div>
-                        <div class="star" [id]="item.level > 2? 'active' : ''"></div>
-                        <div class="star" [id]="item.level > 3? 'active' : ''"></div>
-                        <div class="star" [id]="item.level > 4? 'active' : ''"></div>
-                    </div>
-                </div>
+  </div>
+
+  <!-- ── Skills Section ── -->
+  <div class="section section-alt">
+    <div class="section-inner">
+      <h2 class="section-title">Skills &amp; Technologies</h2>
+      <div class="skills-layout">
+        <div class="skills-grid">
+          <div class="skill-item" *ngFor="let item of skills">
+            <div class="skill-header">
+              <span class="skill-name">{{item.name}}</span>
+              <span class="skill-level-label">{{item.level}} / 5</span>
             </div>
+            <div class="skill-bar">
+              <div class="skill-fill" [style.width.%]="item.level * 20"></div>
+            </div>
+          </div>
         </div>
-        <div class="pie">
-            <img class="pieImage" src="assets/pie.png">
+        <div class="pie-section">
+          <p class="pie-label">Programming Orientation</p>
+          <img class="pieImage" src="assets/pie.png" alt="Programming Orientation Chart">
         </div>
+      </div>
     </div>
+  </div>
+
+  <!-- ── Footer Strip ── -->
+  <div class="footer-strip">
+    <div class="hobbies-row">
+      <span class="hobbies-label">Interests &amp; Hobbies</span>
+      <span class="hobby-tag">🎹 Piano</span>
+      <span class="hobby-tag">🍺 Brewing Beer</span>
+      <span class="hobby-tag">⚔️ Fencing</span>
+      <span class="hobby-tag">🏔️ Outdoor Activities</span>
+      <span class="hobby-tag">💻 Side Projects</span>
+    </div>
+  </div>
+
 </div>
