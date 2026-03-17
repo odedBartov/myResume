@@ -308,3 +308,180 @@
     font-weight: bold;
     color: white;
 }
+
+/* ── Tablet (≤1024px) ── */
+@media (max-width: 1024px) {
+    .welcome {
+        height: auto;
+        padding: 20px 5% 10px;
+    }
+
+    .personalDetails {
+        margin-right: 40px;
+    }
+
+    .title {
+        font-size: 38px;
+    }
+
+    .experience {
+        padding-left: 60px;
+    }
+
+    .skills {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .skill {
+        font-size: 22px;
+        height: 25px;
+        width: 48%;
+    }
+
+    .star {
+        height: 22px;
+        width: 22px;
+    }
+}
+
+/* ── Mobile (≤768px) ── */
+@media (max-width: 768px) {
+    .welcome {
+        flex-direction: column-reverse;
+        height: auto;
+        padding: 15px 5% 10px;
+        align-items: center;
+    }
+
+    .personalDetails {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .profile {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 12px;
+    }
+
+    .profileImage {
+        height: 180px;
+    }
+
+    .title {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    .paragraph {
+        font-size: 14px;
+    }
+
+    .contactButtons {
+        flex-wrap: wrap;
+        gap: 8px;
+        height: auto;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+
+    .contactButtons button {
+        flex: 1 1 calc(50% - 4px);
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+
+    .experience {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .jobTitleLine {
+        font-size: 20px;
+    }
+
+    .companyLine {
+        font-size: 16px;
+    }
+
+    .skills {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .techs {
+        width: 100%;
+    }
+
+    .pie {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+        padding: 16px 0;
+    }
+
+    .pieImage {
+        height: auto;
+        max-width: 88%;
+    }
+
+    .skill {
+        font-size: 18px;
+        height: 22px;
+        width: 48%;
+    }
+
+    .star {
+        height: 20px;
+        width: 20px;
+    }
+}
+
+/* ── Small mobile (≤480px) ── */
+@media (max-width: 480px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .experience {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .experience .work-place {
+        flex-direction: column;
+    }
+
+    .experience .work-place .text {
+        padding: 10px 8px;
+    }
+
+    .experience .work-place .text .header {
+        font-size: 18px;
+    }
+
+    .experience .work-place .text .resp {
+        font-size: 14px;
+    }
+
+    .experience .work-place .bullets {
+        padding: 4px 8px 10px 16px;
+    }
+
+    .skill {
+        font-size: 15px;
+        width: 100%;
+        height: 20px;
+    }
+
+    .star {
+        height: 16px;
+        width: 16px;
+    }
+
+    .contactButtons button {
+        flex: 1 1 100%;
+    }
+}
