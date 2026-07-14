@@ -39,9 +39,10 @@ export class PortfolioComponent implements OnInit {
     const itemB = new PortfolioItem();
     itemB.imgSrc = "assets/tripper.jpeg";
     itemB.title = "Tripper - Mobile app";
-    itemB.description = "A mobile app designed to show the user natural springs in their area based on google maps SDK with filters like distance, accessibility, depth and many more. The app supports users comments on each item and actual live communication and updates. Users can login with google sign in, facebook, or my own users management (hashing passwords and secure connection). I used Firebase for storage and serverless functions";
+    itemB.description = "A mobile app designed to show the user natural springs in their area based on google maps SDK with filters like distance, accessibility, depth and many more. The app supports users comments on each item and actual live communication and updates. Users can login with google sign in or my own users management (hashing passwords and secure connection). I used Firebase for storage and serverless functions";
     itemB.techStack = ["Angular nativescript", "Firebase Storage", "Firebase functions", "Facebook login", "Google login", "Google maps SDK"];
-    itemB.url = "Due to google bureaucracy the app is currently offline";
+    itemB.url = "https://play.google.com/store/apps/details?id=com.bartovCoder.tripper";
+    itemB.isOnline = true;
 
     this.workItems = [itemA, itemB];
   }
